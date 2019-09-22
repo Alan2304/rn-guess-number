@@ -27,6 +27,8 @@ const renderListItem = ( listLength, itemData) => (
 )
 
 const GameScreen = props => {
+    // ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT);
+    
     const initialGuess = generateRandomBetween(1, 100, props.userChoice)
     const [currentGuess, setCurrentGuess] = useState(initialGuess);
     const [pastGuesses, setPastGuesses] = useState([initialGuess.toString()]);
@@ -105,7 +107,7 @@ const GameScreen = props => {
         <View style={styles.screen}>
             <Text style={DefaultStyles.title}>Opponent's Guess</Text>
             <NumberContainer>{currentGuess}</NumberContainer>
-            <Card style={{...styles.buttonContainer, marginTop: availableHeight > 600 ? 20 : 5}}>
+            <Card style={{...styles.buttonContainer, marginTop: availableDeviceHeight > 600 ? 20 : 5}}>
                 <MainButton onPress={nextGuessHandler.bind(this, 'lower')}>
                     <Ionicons name="md-remove" size={24} color="white" />
                 </MainButton>

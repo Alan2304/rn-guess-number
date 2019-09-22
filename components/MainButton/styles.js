@@ -12,6 +12,10 @@ const styles = StyleSheet.create({
         color: 'white',
         fontFamily: 'open-sans',
         fontSize: 18
+    },
+    buttonContainer: {
+        borderRadius: 25,
+        overflow: 'hidden'
     }
 });
 
